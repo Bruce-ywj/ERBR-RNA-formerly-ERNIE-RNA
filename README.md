@@ -24,6 +24,8 @@ You can find more details about **ERNIE-RNA** in our paper, [ERNIE-RNA: An RNA L
 
 ## Create Environment with Conda 
 
+### Linux Environment
+
 First, download the repository and create the environment.
 
 ```
@@ -36,6 +38,43 @@ Then, activate the "ERNIE-RNA" environment.
 
 ```
 conda activate ERNIE-RNA
+```
+
+### Windows Environment
+
+Since the fairseq library depends on C++ code, you need to install Microsoft C++ Build Tools first:
+
+https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+Open the installer and check "Desktop development with C++" on the left panel.
+
+Then run:
+
+```
+conda env create -f environment_CPU_windows.yml
+```
+
+### MacOS Environment
+
+Run:
+
+```
+conda env create -f environment_CPU_mac.yml
+```
+
+At this step, the torch version is not explicitly specified.
+
+Since the default parameters of the load function have changed in newer versions, you can either downgrade to version 1.10.0 after the environment is installed, or add the following patch after import torch:
+
+```
+import torch as _torch
+__orig_load = _torch.load
+
+def _patched_load(*args, **kwargs):
+    kwargs.setdefault("weights_only", False)  # Restore the default behavior before version 2.5
+    return __orig_load(*args, **kwargs)
+
+_torch.load = _patched_load
 ```
 
 ## Access pre-trained models. 
