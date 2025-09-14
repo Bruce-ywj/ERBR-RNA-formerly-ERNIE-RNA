@@ -1,4 +1,4 @@
-name: ERNIE-RNA-cpu
+name: ERBR-RNA-cpu
 channels:
   - conda-forge
   - pytorch
@@ -37,3 +37,4 @@ dependencies:
       - tabulate==0.9.0
       - pyyaml==6.0.1
       - portalocker==2.8.2
+
