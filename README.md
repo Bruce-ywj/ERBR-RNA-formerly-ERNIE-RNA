@@ -1,4 +1,5 @@
 # ERBR-RNA (formerly known as ERNIE-RNA)
+This repository was formerly named ERNIE-RNA.
 
 This repository contains codes and pre-trained models for **RNA feature extraction and secondary structure prediction model (ERBR-RNA)**.
 **ERBR-RNA is superior to the tested RNA feature extraction models (including RNA-FM) in the feature extraction task, and its effect in the secondary structure prediction task is better than RNAfold, UNI-RNA and others.**
@@ -29,15 +30,15 @@ You can find more details about **ERBR-RNA** in our paper, [ERNIE-RNA: An RNA La
 First, download the repository and create the environment.
 
 ```
-git clone https://github.com/Bruce-ywj/ERNIE-RNA.git
-cd ./ERNIE-RNA
+git clone https://github.com/Bruce-ywj/ERBR-RNA-formerly-ERNIE-RNA.git
+cd ./ERBR-RNA-formerly-ERNIE-RNA
 conda env create -f environment.yml
 ```
 
-Then, activate the "ERNIE-RNA" environment.
+Then, activate the "ERBR-RNA" environment.
 
 ```
-conda activate ERNIE-RNA
+conda activate ERBR-RNA
 ```
 
 ### Windows Environment
