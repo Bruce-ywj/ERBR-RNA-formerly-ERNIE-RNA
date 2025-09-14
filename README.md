@@ -1,8 +1,8 @@
-# ERNIE-RNA
+# ERBR-RNA (formerly known as ERNIE-RNA)
 
-This repository contains codes and pre-trained models for **RNA feature extraction and secondary structure prediction model (ERNIE-RNA)**.
-**ERNIE-RNA is superior to the tested RNA feature extraction models (including RNA-FM) in the feature extraction task, and its effect in the secondary structure prediction task is better than RNAfold, UNI-RNA and others.**
-You can find more details about **ERNIE-RNA** in our paper, [ERNIE-RNA: An RNA Language Model with Structure-enhanced Representations](https://www.biorxiv.org/content/10.1101/2024.03.17.585376v1)
+This repository contains codes and pre-trained models for **RNA feature extraction and secondary structure prediction model (ERBR-RNA)**.
+**ERBR-RNA is superior to the tested RNA feature extraction models (including RNA-FM) in the feature extraction task, and its effect in the secondary structure prediction task is better than RNAfold, UNI-RNA and others.**
+You can find more details about **ERBR-RNA** in our paper, [ERNIE-RNA: An RNA Language Model with Structure-enhanced Representations](https://www.biorxiv.org/content/10.1101/2024.03.17.585376v1)
 
 ![Overview](./docs/model.png)
 
@@ -10,10 +10,10 @@ You can find more details about **ERNIE-RNA** in our paper, [ERNIE-RNA: An RNA L
 
 <details><summary>Table of contents</summary>
 
-- [ERNIE-RNA](#ernie-rna)
+- [ERBR-RNA](#ernie-rna)
   - [Create Environment with Conda ](#create-environment-with-conda-)
   - [Access pre-trained models. ](#access-pre-trained-models-)
-  - [Apply ERNIE-RNA with Existing Scripts. ](#apply-ernie-rna-with-existing-scripts-)
+  - [Apply ERBR-RNA with Existing Scripts. ](#apply-ernie-rna-with-existing-scripts-)
     - [1. Embedding Extraction. ](#1-embedding-extraction-)
     - [2. Secondary structure prediction. ](#2-secondary-structure-prediction-)
     - [3. 3D Closeness Prediction ](#3-3d-closeness-prediction-)
