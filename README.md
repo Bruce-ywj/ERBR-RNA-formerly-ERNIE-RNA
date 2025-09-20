@@ -1,9 +1,8 @@
-# ERBR-RNA (formerly known as ERNIE-RNA)
-This repository was formerly named ERNIE-RNA.
+# ERNIE-RNA
 
-This repository contains codes and pre-trained models for **RNA feature extraction and secondary structure prediction model (ERBR-RNA)**.
-**ERBR-RNA is superior to the tested RNA feature extraction models (including RNA-FM) in the feature extraction task, and its effect in the secondary structure prediction task is better than RNAfold, UNI-RNA and others.**
-You can find more details about **ERBR-RNA** in our paper, [ERNIE-RNA: An RNA Language Model with Structure-enhanced Representations](https://www.biorxiv.org/content/10.1101/2024.03.17.585376v1)
+This repository contains codes and pre-trained models for **RNA feature extraction and secondary structure prediction model (ERNIE-RNA)**.
+**ERNIE-RNA is superior to the tested RNA feature extraction models (including RNA-FM) in the feature extraction task, and its effect in the secondary structure prediction task is better than RNAfold, UNI-RNA and others.**
+You can find more details about **ERNIE-RNA** in our paper, [ERNIE-RNA: An RNA Language Model with Structure-enhanced Representations](https://www.biorxiv.org/content/10.1101/2024.03.17.585376v1)
 
 ![Overview](./docs/model.png)
 
@@ -11,10 +10,10 @@ You can find more details about **ERBR-RNA** in our paper, [ERNIE-RNA: An RNA La
 
 <details><summary>Table of contents</summary>
 
-- [ERBR-RNA (ERNIE-RNA)](#ernie-rna)
+- [ERNIE-RNA](#ernie-rna)
   - [Create Environment with Conda ](#create-environment-with-conda-)
   - [Access pre-trained models. ](#access-pre-trained-models-)
-  - [Apply ERBR-RNA (ERNIE-RNA) with Existing Scripts. ](#apply-ernie-rna-with-existing-scripts-)
+  - [Apply ERNIE-RNA with Existing Scripts. ](#apply-ernie-rna-with-existing-scripts-)
     - [1. Embedding Extraction. ](#1-embedding-extraction-)
     - [2. Secondary structure prediction. ](#2-secondary-structure-prediction-)
     - [3. 3D Closeness Prediction ](#3-3d-closeness-prediction-)
@@ -30,15 +29,15 @@ You can find more details about **ERBR-RNA** in our paper, [ERNIE-RNA: An RNA La
 First, download the repository and create the environment.
 
 ```
-git clone https://github.com/Bruce-ywj/ERBR-RNA-formerly-ERNIE-RNA.git
-cd ./ERBR-RNA-formerly-ERNIE-RNA
+git clone https://github.com/Bruce-ywj/ERNIE-RNA.git
+cd ./ERNIE-RNA
 conda env create -f environment.yml
 ```
 
-Then, activate the "ERBR-RNA" environment.
+Then, activate the "ERNIE-RNA" environment.
 
 ```
-conda activate ERBR-RNA
+conda activate ERNIE-RNA
 ```
 
 ### Windows Environment
@@ -82,7 +81,7 @@ _torch.load = _patched_load
 
 There are two subfolders in the model folder, each folder has a link, and you can download the model in the link to the same directory. Or you can download both models from our [drive](https://drive.google.com/drive/folders/10Yz-sdezhmazzVtrtdBGdzzqK1Z6f-Xv)
 
-## Apply ERBR-RNA (ERNIE-RNA) with Existing Scripts. 
+## Apply ERNIE-RNA with Existing Scripts. 
 
 ### 1. Embedding Extraction. 
 
@@ -94,13 +93,13 @@ The model path parameters are set by default and do not need to be changed.
 
 The corresponding feature extraction code is inside this file, and the sequence in the file can be modified when used.
 
-In this file, you can use ERBR-RNA (ERNIE-RNA) for feature extraction.
+In this file, you can use ERNIE-RNA for feature extraction.
 
 Features include cls, tokens, atten_map.
 
 ### 2. Secondary structure prediction. 
 
-ERBR-RNA (ERNIE-RNA) provides powerful RNA secondary structure prediction capabilities, supporting model parameters from various training datasets and simultaneously providing both fine-tuned model and zero-shot prediction results.
+ERNIE-RNA provides powerful RNA secondary structure prediction capabilities, supporting model parameters from various training datasets and simultaneously providing both fine-tuned model and zero-shot prediction results.
 
 #### Basic Usage:
 
@@ -127,12 +126,10 @@ python predict_ss_rna.py --dataset_name bpRNA-1m --seqs_path={fasta_dir} --save_
 | `bpRNA-new`            | ERNIE-RNA_attn-map_frozen_ss_prediction_bpRNA-1m_checkpoint.pt              | Novel RNA structure prediction (Note: This is the ERNIE-RNA attn-map frozen model trained on the bpRNA-1m dataset, bpRNA-new do not serve as the trainset))                        |
 | `bpRNA-1m_RNAstralign` | ERNIE-RNA_attn-map_ss_prediction_bpRNA-1m-all_and_RNAStralign_checkpoint.pt | General RNA structure prediction (Note: Used all bpRNA-1m) and RNAStralign trainset sequences, excluding various(eg. RIVAS, RNA3DB) datasets' valid/test sequences, for training) |
 
-The file name in the table corresponds to ERBR-RNA (formerly known as ERNIE-RNA).
-
 
 #### Output Files:
 
-For each input sequence, ERBR-RNA (ERNIE-RNA) generates two structure files in CT format:
+For each input sequence, ERNIE-RNA generates two structure files in CT format:
 
 - `{sequence_name}_finetune_prediction.ct`: Prediction results from the model fine-tuned on the specified training dataset
 - `{sequence_name}_zeroshot_prediction.ct`: Zero-shot prediction results using the pre-trained model (without fine-tuning)
@@ -166,7 +163,7 @@ python predict_ss_rna.py --dataset_name bpRNA-new --device 0 --seqs_path ./data/
 
 ### 3. 3D Closeness Prediction 
 
-This section describes how to use ERBR-RNA (ERNIE-RNA) to predict RNA 3D closeness maps. This functionality relies on the pre-trained ERBR-RNA (ERNIE-RNA) model as a feature extractor and a downstream model head specifically fine-tuned for the 3D closeness task. The recommended downstream model architecture is based on ERBR-RNA (ERNIE-RNA)'s attention maps.
+This section describes how to use ERNIE-RNA to predict RNA 3D closeness maps. This functionality relies on the pre-trained ERNIE-RNA model as a feature extractor and a downstream model head specifically fine-tuned for the 3D closeness task. The recommended downstream model architecture is based on ERNIE-RNA's attention maps.
 
 **Usage Example:**
 
@@ -181,7 +178,7 @@ python predict_3d_clossness.py \
 
 ## 4. UTR MRL prediction 
 
-This section describes how to use ERBR-RNA (ERNIE-RNA) to predict mean ribosome loading (MRL) for 5' UTR RNA sequences, a key measure of translation efficiency.
+This section describes how to use ERNIE-RNA to predict mean ribosome loading (MRL) for 5' UTR RNA sequences, a key measure of translation efficiency.
 
 ### Basic Usage
 
@@ -194,7 +191,7 @@ python predict_MRL.py \
 ### Parameters
 
 - `--data_roots`: Path to input FASTA file containing 5'UTR sequences (default: `./data/MRL_data/seqs.fasta`)
-- `--bert_path`: Path to ERBR-RNA (ERNIE-RNA) pre-trained model checkpoint (default: `./checkpoint/ERNIE-RNA_checkpoint/ERNIE-RNA_pretrain.pt`)
+- `--bert_path`: Path to ERNIE-RNA pre-trained model checkpoint (default: `./checkpoint/ERNIE-RNA_checkpoint/ERNIE-RNA_pretrain.pt`)
 - `--model_root`: Path to fine-tuned MRL prediction model weights (default: `./checkpoint/ERNIE-RNA_UTR_MRL_checkpoint/ERNIE-RNA-UTR_ML_CNN_checkpoint.pt`)
 - `--scaler_root`: Path to scaler file for normalization (default: `./checkpoint/ERNIE-RNA_UTR_MRL_checkpoint/scaler.save`)
 - `--output_dir`: Directory to save prediction results (default: `./results/ernie_rna_utr_mrl`)
